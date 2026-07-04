@@ -11,6 +11,7 @@ import { NavLink } from "@/components/layout/nav-link";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { NAV_ITEMS, SOCIAL_ITEMS, RESUME_URL } from "@/constants/navigation";
+import { Magnetic } from "@/components/animations/magnetic";
 
 const SCROLL_THRESHOLD = 24;
 
@@ -111,15 +112,19 @@ export function Navbar() {
 
             <ThemeToggle />
 
-            <Button asChild variant="outline" size="sm" className="hidden rounded-[var(--radius-md)] lg:inline-flex">
-              <a href={RESUME_URL} target="_blank" rel="noreferrer">
-                Resume
-              </a>
-            </Button>
+            <Magnetic strength={0.15}>
+              <Button asChild variant="outline" size="sm" className="hidden rounded-[var(--radius-md)] lg:inline-flex">
+                <a href={RESUME_URL} target="_blank" rel="noreferrer">
+                  Resume
+                </a>
+              </Button>
+            </Magnetic>
 
-            <Button asChild size="sm" className="hidden rounded-[var(--radius-md)] md:inline-flex">
-              <Link href="#contact">Hire Me</Link>
-            </Button>
+            <Magnetic strength={0.15}>
+              <Button asChild size="sm" className="hidden rounded-[var(--radius-md)] md:inline-flex">
+                <Link href="#contact">Hire Me</Link>
+              </Button>
+            </Magnetic>
 
             <button
               type="button"

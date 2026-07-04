@@ -3,12 +3,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setMounted(true);
@@ -30,9 +31,11 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={toggleTheme}
+      whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
+      whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       className={cn(
         "relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-[var(--radius-full)]",
@@ -47,7 +50,7 @@ export function ThemeToggle() {
           initial={{ opacity: 0, rotate: -90, scale: 0.6 }}
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
           exit={{ opacity: 0, rotate: 90, scale: 0.6 }}
-          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
           className="flex items-center justify-center"
         >
           {isDark ? (
@@ -57,6 +60,6 @@ export function ThemeToggle() {
           )}
         </motion.span>
       </AnimatePresence>
-    </button>
+    </motion.button>
   );
 }

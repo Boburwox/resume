@@ -2,8 +2,8 @@
 
 import type { PropsWithChildren } from "react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
-
 import { THEME_STORAGE_KEY } from "@/constants/theme";
+import { MotionProvider } from "@/components/animations/motion-provider";
 
 export function AppProviders({ children }: PropsWithChildren) {
   return (
@@ -14,7 +14,9 @@ export function AppProviders({ children }: PropsWithChildren) {
       enableSystem
       storageKey={THEME_STORAGE_KEY}
     >
-      {children}
+      <MotionProvider>
+        {children}
+      </MotionProvider>
     </NextThemeProvider>
   );
 }
