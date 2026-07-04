@@ -1,11 +1,23 @@
-import { Container } from "@/components/layout/container";
+import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
+import { Experience } from "@/components/sections/experience";
+import { Skills } from "@/components/cards/skills";
+import { Projects } from "@/components/sections/projects";
+import { GitHubDashboard } from "@/features/github/components/github-dashboard";
+import { ResumeSection } from "@/features/resume/components/resume-section";
+import { ContactSection } from "@/features/contact/components/contact-section";
 
 export default function HomePage() {
   return (
-    <Container className="flex min-h-svh items-center justify-center py-24" size="sm">
-      <h1 className="text-center text-balance text-xl font-medium tracking-normal text-foreground sm:text-2xl">
-        Portfolio Foundation Ready
-      </h1>
-    </Container>
+    <div className="flex flex-col w-full">
+      <Hero />
+      <About />
+      <Experience />
+      <Skills />
+      <Projects />
+      <GitHubDashboard />
+      <ResumeSection />
+      <ContactSection />
+    </div>
   );
 }

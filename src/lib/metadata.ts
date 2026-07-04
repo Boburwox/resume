@@ -9,12 +9,28 @@ type CreateMetadataOptions = {
   description?: string;
   path?: string;
   noIndex?: boolean;
+  keywords?: string[];
+  imageUrl?: string;
 };
 
 export function createMetadata(options: CreateMetadataOptions = {}): Metadata {
   const title = options.title ?? siteConfig.name;
   const description = options.description ?? siteConfig.description;
   const canonical = new URL(options.path ?? routes.home, env.siteUrl).toString();
+  const keywords = options.keywords ?? [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Developer Portfolio",
+    "Software Engineer",
+    "Web Development",
+    "SaaS",
+    "Frontend Systems",
+    "Accessibility",
+    "CareOne Product"
+  ];
+  const imageUrl = options.imageUrl ?? `${env.siteUrl}/icon.svg`;
 
   return {
     metadataBase: new URL(env.siteUrl),
@@ -22,10 +38,11 @@ export function createMetadata(options: CreateMetadataOptions = {}): Metadata {
     title: options.title
       ? `${title} | ${siteConfig.name}`
       : {
-          default: siteConfig.name,
-          template: `%s | ${siteConfig.name}`,
-        },
+        default: siteConfig.name,
+        template: `%s | ${siteConfig.name}`,
+      },
     description,
+    keywords,
     authors: [{ name: siteConfig.creator }],
     creator: siteConfig.creator,
     publisher: siteConfig.creator,
@@ -39,11 +56,21 @@ export function createMetadata(options: CreateMetadataOptions = {}): Metadata {
       siteName: siteConfig.name,
       title,
       description,
+      images: [
+        {
+          url: imageUrl,
+          width: 512,
+          height: 512,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [imageUrl],
+      creator: siteConfig.creator,
     },
     robots: {
       index: !options.noIndex,
@@ -57,8 +84,12 @@ export function createMetadata(options: CreateMetadataOptions = {}): Metadata {
       },
     },
     icons: {
-      icon: "/icon.svg",
-      apple: "/icon.svg",
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+      ],
+      apple: [
+        { url: "/icon.svg", sizes: "180x180", type: "image/svg+xml" },
+      ],
     },
     manifest: "/manifest.webmanifest",
   };
