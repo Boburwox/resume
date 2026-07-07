@@ -38,11 +38,15 @@ function ContactCtaComponent({ cta }: ContactCtaProps) {
                 {cleanedDescription}
             </p>
 
-            <Button asChild size="lg" className="button-hover relative z-10 mt-[var(--space-8)] rounded-[var(--radius-md)]">
-                <a href={cta.href} className="cursor-pointer">
-                    <Send className="mr-2 h-4 w-4" aria-hidden="true" />
+            <Button
+                asChild
+                size="lg"
+                className="relative z-10 mt-[var(--space-8)] group cursor-pointer"
+            >
+                <a href={cta.href}>
+                    <Send className="mr-1.5 h-4 w-4" aria-hidden="true" />
                     {cta.label}
-                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-[var(--duration-fast)] group-hover:translate-x-1" aria-hidden="true" />
                 </a>
             </Button>
         </motion.section>

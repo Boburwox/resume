@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import type { GitHubRepository } from "@/types/github";
 import { formatCompactNumber, formatRelativeGitHubDate } from "@/features/github/services/github-service";
+import { Button } from "@/components/ui/button";
 
 interface GitHubRepositoryCardProps {
   repository: GitHubRepository;
@@ -24,22 +25,22 @@ function GitHubRepositoryCardComponent({ repository, featured = false }: GitHubR
       viewport={{ margin: "-80px", once: true }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "glass flex h-full flex-col gap-[var(--space-20)] rounded-[var(--radius-2xl)] p-[var(--space-20)] transition-shadow duration-[var(--duration-normal)] hover:shadow-[var(--shadow-large)]",
-        featured && "p-[var(--space-24)]",
+        "glass flex h-full flex-col gap-[var(--space-24)] rounded-[var(--radius-xl)] p-[var(--space-24)] transition-shadow duration-[var(--duration-normal)] hover:shadow-[var(--shadow-large)] border border-[var(--color-glass-border)] bg-[var(--color-glass)]",
+        featured && "p-[var(--space-32)]",
       )}
     >
       <div className="flex items-start justify-between gap-[var(--space-16)]">
         <div className="min-w-0">
-          <h4 className="break-words text-body-lg font-semibold tracking-[var(--tracking-normal)] text-[var(--color-text-primary)]">
+          <h4 className="break-words text-body-lg font-bold tracking-[var(--tracking-normal)] text-[var(--color-text-primary)]">
             {repository.name}
           </h4>
-          <div className="mt-[var(--space-8)] flex flex-wrap items-center gap-[var(--space-8)] text-xs text-[var(--color-muted)]">
+          <div className="mt-[var(--space-8)] flex flex-wrap items-center gap-[var(--space-8)] text-xs text-[var(--color-muted)] font-medium">
             {repository.language && <span>{repository.language}</span>}
             <span className="inline-flex items-center gap-[var(--space-4)]">
               {repository.visibility === "public" ? (
-                <Globe2 className="h-3.5 w-3.5" aria-hidden="true" />
+                <Globe2 className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
               ) : (
-                <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
+                <LockKeyhole className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
               )}
               {repository.visibility}
             </span>
@@ -51,13 +52,13 @@ function GitHubRepositoryCardComponent({ repository, featured = false }: GitHubR
           target="_blank"
           rel="noreferrer"
           aria-label={`Open ${repository.name} repository`}
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-full)] border border-[var(--color-border)] bg-[var(--color-glass)] text-[var(--color-text-primary)] transition-transform duration-[var(--duration-fast)] hover:-translate-y-0.5 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+          className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] border border-[var(--color-border)] bg-[var(--color-glass)] text-[var(--color-text-primary)] transition-transform duration-[var(--duration-fast)] hover:-translate-y-0.5 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
         >
-          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <ArrowUpRight className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
         </a>
       </div>
 
-      <p className="min-h-12 text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+      <p className="min-h-12 text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
         {repository.description ?? "A public GitHub repository maintained as part of the engineering portfolio."}
       </p>
 
@@ -66,7 +67,7 @@ function GitHubRepositoryCardComponent({ repository, featured = false }: GitHubR
           {visibleTopics.map((topic) => (
             <li
               key={topic}
-              className="rounded-[var(--radius-full)] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-12)] py-[var(--space-4)] text-xs font-medium text-[var(--color-text-secondary)]"
+              className="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-12)] py-[var(--space-6)] text-xs font-semibold text-[var(--color-text-secondary)]"
             >
               {topic}
             </li>
@@ -74,18 +75,18 @@ function GitHubRepositoryCardComponent({ repository, featured = false }: GitHubR
         </ul>
       )}
 
-      <div className="mt-auto flex flex-wrap items-center gap-[var(--space-12)] text-xs text-[var(--color-muted)]">
+      <div className="mt-auto flex flex-wrap items-center gap-[var(--space-12)] text-xs text-[var(--color-muted)] font-medium">
         <span className="inline-flex items-center gap-[var(--space-4)]">
-          <Star className="h-3.5 w-3.5 text-[var(--color-warning)]" aria-hidden="true" />
+          <Star className="h-[18px] w-[18px] text-[var(--color-warning)] stroke-[1.5]" aria-hidden="true" />
           {formatCompactNumber(repository.stars)}
         </span>
         <span className="inline-flex items-center gap-[var(--space-4)]">
-          <GitFork className="h-3.5 w-3.5 text-[var(--color-accent)]" aria-hidden="true" />
+          <GitFork className="h-[18px] w-[18px] text-[var(--color-accent)] stroke-[1.5]" aria-hidden="true" />
           {formatCompactNumber(repository.forks)}
         </span>
         {repository.licenseName && (
           <span className="inline-flex items-center gap-[var(--space-4)]">
-            <Scale className="h-3.5 w-3.5" aria-hidden="true" />
+            <Scale className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
             {repository.licenseName}
           </span>
         )}
@@ -107,15 +108,16 @@ interface RepositoryActionProps {
 
 function RepositoryAction({ href, label }: RepositoryActionProps) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center justify-center gap-[var(--space-8)] rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-12)] py-[var(--space-8)] text-sm font-medium text-[var(--color-text-primary)] transition-colors duration-[var(--duration-fast)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-card)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
-    >
-      {label}
-      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-    </a>
+    <Button asChild variant="outline" size="sm" className="w-full">
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {label}
+        <ArrowUpRight className="h-[18px] w-[18px] inline-block align-middle stroke-[1.5] ml-1.5" aria-hidden="true" />
+      </a>
+    </Button>
   );
 }
 

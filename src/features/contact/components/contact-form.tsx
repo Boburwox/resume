@@ -67,13 +67,13 @@ function ContactFormComponent() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      className="glass flex flex-col gap-[var(--space-20)] rounded-[var(--radius-2xl)] p-[var(--space-24)]"
+      className="glass flex flex-col gap-[var(--space-24)] rounded-[var(--radius-xl)] p-[var(--space-32)] border border-[var(--color-glass-border)] bg-[var(--color-glass)] shadow-[var(--shadow-glass)]"
     >
       <div>
-        <h3 className="text-h3 font-semibold tracking-[var(--tracking-normal)] text-[var(--color-text-primary)]">
+        <h3 className="text-h3 font-bold tracking-[var(--tracking-tight)] text-[var(--color-text-primary)]">
           Contact Form
         </h3>
-        <p className="mt-[var(--space-8)] text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+        <p className="mt-[var(--space-8)] text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
           Share context, constraints, and the outcome you want to create.
         </p>
       </div>
@@ -86,7 +86,7 @@ function ContactFormComponent() {
       </div>
 
       <label className="flex flex-col gap-[var(--space-8)]">
-        <span className="text-sm font-medium text-[var(--color-text-primary)]">Message</span>
+        <span className="text-sm font-semibold text-[var(--color-text-primary)]">Message</span>
         <textarea
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
@@ -94,33 +94,37 @@ function ContactFormComponent() {
           maxLength={LIMITS.message}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "contact-message-error" : "contact-message-count"}
-          className="min-h-40 resize-y rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-16)] py-[var(--space-12)] text-sm text-[var(--color-text-primary)] outline-none transition-colors focus:border-[var(--color-accent)]"
+          className="min-h-40 resize-y rounded-[12px] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-16)] py-[var(--space-12)] text-sm text-[var(--color-text-primary)] outline-none transition-all focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)]"
         />
-        <span id="contact-message-count" className="text-xs text-[var(--color-muted)]">
+        <span id="contact-message-count" className="text-xs text-[var(--color-muted)] font-semibold">
           {messageCount}/{LIMITS.message}
         </span>
         {errors.message && (
-          <span id="contact-message-error" className="text-sm text-[var(--color-danger)]">
+          <span id="contact-message-error" className="text-sm text-[var(--color-danger)] font-medium">
             {errors.message}
           </span>
         )}
       </label>
 
       {status === "success" && (
-        <div className="flex items-center gap-[var(--space-8)] rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-glass)] p-[var(--space-12)] text-sm text-[var(--color-success)]">
-          <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+        <div className="flex items-center gap-[var(--space-8)] rounded-[12px] border border-[var(--color-border)] bg-[var(--color-glass)] p-[var(--space-12)] text-sm text-[var(--color-success)] font-semibold">
+          <CheckCircle2 className="h-5 w-5 stroke-[1.5]" aria-hidden="true" />
           Message ready. Use your preferred mail client or contact method to send it.
         </div>
       )}
 
       {status === "error" && (
-        <div className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-glass)] p-[var(--space-12)] text-sm text-[var(--color-danger)]">
+        <div className="rounded-[12px] border border-[var(--color-border)] bg-[var(--color-glass)] p-[var(--space-12)] text-sm text-[var(--color-danger)] font-semibold">
           Please fix the highlighted fields and try again.
         </div>
       )}
 
-      <Button type="submit" size="lg" className="button-hover w-fit rounded-[var(--radius-md)]">
-        <Send className="h-4 w-4" aria-hidden="true" />
+      <Button
+        type="submit"
+        size="lg"
+        className="group cursor-pointer w-full sm:w-auto"
+      >
+        <Send className="h-5 w-5 stroke-[1.5] mr-1.5" aria-hidden="true" />
         Send Message
       </Button>
     </motion.form>
@@ -141,7 +145,7 @@ function Field({ label, name, value, error, required = false, onChange }: FieldP
 
   return (
     <label className="flex flex-col gap-[var(--space-8)]">
-      <span className="text-sm font-medium text-[var(--color-text-primary)]">{label}</span>
+      <span className="text-sm font-semibold text-[var(--color-text-primary)]">{label}</span>
       <input
         value={value}
         onChange={(event) => onChange(name, event.target.value)}
@@ -149,10 +153,10 @@ function Field({ label, name, value, error, required = false, onChange }: FieldP
         maxLength={LIMITS[name]}
         aria-invalid={Boolean(error)}
         {...(error ? { "aria-describedby": errorId } : {})}
-        className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-16)] py-[var(--space-12)] text-sm text-[var(--color-text-primary)] outline-none transition-colors focus:border-[var(--color-accent)]"
+        className="rounded-[12px] border border-[var(--color-border)] bg-[var(--color-glass)] px-[var(--space-16)] py-[var(--space-12)] text-sm text-[var(--color-text-primary)] outline-none transition-all focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)]"
       />
       {error && (
-        <span id={errorId} className="text-sm text-[var(--color-danger)]">
+        <span id={errorId} className="text-sm text-[var(--color-danger)] font-medium">
           {error}
         </span>
       )}

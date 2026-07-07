@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { TechBadge } from "@/components/common/tech-badge";
 import type { Skill, SkillCategory } from "@/types/skill";
 
@@ -28,7 +28,7 @@ function CategoryCardComponent({ category, skills, className }: CategoryCardProp
       {...(shouldReduceMotion ? {} : { whileHover: { y: -4 } })}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "card-hover glass flex flex-col gap-[var(--space-16)] rounded-[var(--radius-xl)] p-[var(--space-24)]",
+        "glass flex flex-col gap-[var(--space-20)] rounded-[var(--radius-xl)] p-[var(--space-32)] border border-[var(--color-glass-border)] bg-[var(--color-glass)] shadow-[var(--shadow-glass)] hover:-translate-y-[2px] transition-transform duration-[250ms]",
         className
       )}
     >
@@ -36,18 +36,18 @@ function CategoryCardComponent({ category, skills, className }: CategoryCardProp
         <motion.div
           {...(shouldReduceMotion ? {} : { whileHover: { rotate: -6, scale: 1.06 } })}
           transition={{ type: "spring", stiffness: 320, damping: 18 }}
-          className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)]"
+          className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)]"
         >
-          <Icon className="h-5 w-5" aria-hidden="true" />
+          <Icon className="h-5 w-5 stroke-[1.5]" aria-hidden="true" />
         </motion.div>
-        <h3 className="text-body-lg font-semibold text-[var(--color-text-primary)]">{category.title}</h3>
+        <h3 className="text-body-lg font-bold text-[var(--color-text-primary)]">{category.title}</h3>
       </div>
 
-      <p className="text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+      <p className="text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
         {category.description}
       </p>
 
-      <div className="mt-auto flex flex-wrap gap-[var(--space-8)]" aria-label={`${category.title} technologies`}>
+      <div className="mt-auto flex flex-wrap gap-[var(--space-8)] pt-2" aria-label={`${category.title} technologies`}>
         {skills.map((skill) => (
           <TechBadge key={skill.id} label={skill.name} icon={skill.icon} />
         ))}

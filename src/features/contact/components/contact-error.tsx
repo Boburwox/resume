@@ -29,12 +29,12 @@ function ContactErrorComponent({
 
             <div className="flex flex-wrap gap-[var(--space-12)] justify-center">
                 {onRetry && (
-                    <Button onClick={onRetry} size="sm" className="button-hover rounded-[var(--radius-md)]">
+                    <Button onClick={onRetry} size="sm" className="cursor-pointer">
                         <RefreshCw className="mr-2 h-4 w-4" aria-hidden="true" />
                         Try Again
                     </Button>
                 )}
-                <Button asChild variant="outline" size="sm" className="button-hover rounded-[var(--radius-md)]">
+                <Button asChild variant="outline" size="sm" className="cursor-pointer">
                     <a href="mailto:hello@example.com">
                         Send Email Directly
                     </a>

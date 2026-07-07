@@ -1,69 +1,75 @@
 :root {
   --color-background: #08090a;
-  --color-surface: #0f1012;
+  --color-surface: #0e0f11;
   --color-card: #151619;
   --color-primary: #f5f5f7;
   --color-primary-foreground: #08090a;
   --color-secondary: #8b8d98;
   --color-secondary-foreground: #f5f5f7;
-  --color-accent: #5e6ad2;
+  --color-accent: #3b82f6;
   --color-accent-foreground: #ffffff;
-  --color-success: #2fd679;
+  --color-success: #10b981;
   --color-warning: #f5a623;
-  --color-danger: #f5455c;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-danger: #f43f5e;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
   --color-text-primary: #f7f8f8;
-  --color-text-secondary: #a1a1aa;
-  --color-muted: #71717a;
-  --color-overlay: rgba(0, 0, 0, 0.6);
-  --color-glass: rgba(255, 255, 255, 0.04);
-  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-text-secondary: #8f9199;
+  --color-muted: #64656c;
+  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-glass: rgba(14, 15, 17, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
 
   --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 
-  --text-hero: 5rem;
+  --text-hero: 5.5rem;
   --text-h1: 3.5rem;
-  --text-h2: 2.5rem;
-  --text-h3: 1.875rem;
-  --text-h4: 1.5rem;
-  --text-body-lg: 1.125rem;
-  --text-body: 1rem;
-  --text-caption: 0.8125rem;
+  --text-h2: 2.25rem;
+  --text-h3: 1.75rem;
+  --text-h4: 1.35rem;
+  --text-body-lg: 1.05rem;
+  --text-body: 0.9375rem;
+  --text-caption: 0.8rem;
 
   --tracking-tighter: -0.04em;
   --tracking-tight: -0.02em;
   --tracking-normal: 0em;
-  --tracking-wide: 0.02em;
-  --tracking-wider: 0.06em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
 
-  --leading-tight: 1.1;
-  --leading-snug: 1.3;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.7;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.75;
 
   --font-regular: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 0.875rem;
-  --radius-xl: 1.25rem;
-  --radius-2xl: 1.75rem;
+  /* Premium system radiuses */
+  --radius-sm: 0.5rem;
+  /* 8px */
+  --radius-md: 1rem;
+  /* 16px - Buttons */
+  --radius-lg: 1.25rem;
+  /* 20px */
+  --radius-xl: 1.5rem;
+  /* 24px - Cards */
+  --radius-2xl: 2rem;
+  /* 32px - Portrait / Sections */
   --radius-full: 9999px;
 
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 1px rgba(0, 0, 0, 0.12);
-  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.32), 0 2px 6px rgba(0, 0, 0, 0.18);
-  --shadow-large: 0 16px 48px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.24);
-  --shadow-glow: 0 0 32px rgba(245, 245, 247, 0.12);
-  --shadow-blue-glow: 0 0 40px rgba(94, 106, 210, 0.35);
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.16);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.24);
+  --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(94, 106, 210, 0.08);
+  --shadow-blue-glow: 0 0 50px rgba(59, 130, 246, 0.25);
+  --shadow-glass: 0 8px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   --blur-glass: 20px;
-  --blur-card: 12px;
+  --blur-card: 16px;
   --blur-nav: 24px;
 
   --space-4: 0.25rem;
@@ -75,23 +81,24 @@
   --space-32: 2rem;
   --space-40: 2.5rem;
   --space-48: 3rem;
-  --space-64: 4rem;
-  --space-80: 5rem;
-  --space-96: 6rem;
-  --space-128: 8rem;
+  --space-64: 4.25rem;
+  --space-80: 5.5rem;
+  --space-96: 6.75rem;
+  --space-128: 9rem;
 
-  --duration-fast: 150ms;
+  --duration-fast: 160ms;
   --duration-normal: 250ms;
+  /* Specified transition speed */
   --duration-slow: 400ms;
 
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.9, 0, 0.9, 1);
+  --ease-emphasized: cubic-bezier(0.15, 1, 0.2, 1);
 
-  --scale-hover: 1.02;
-  --scale-hover-card: 1.015;
-  --scale-hover-button: 1.03;
+  --scale-hover: 1.015;
+  --scale-hover-card: 1.01;
+  --scale-hover-button: 1.02;
   --scale-active: 0.98;
 
   --breakpoint-mobile: 375px;
@@ -102,43 +109,45 @@
 }
 
 [data-theme="light"] {
-  --color-background: #ffffff;
-  --color-surface: #f7f7f8;
+  --color-background: #fcfcfc;
+  --color-surface: #f4f5f6;
   --color-card: #ffffff;
-  --color-primary: #0a0a0b;
+  --color-primary: #08090a;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #6b6d76;
-  --color-secondary-foreground: #0a0a0b;
-  --color-accent: #4c53c4;
+  --color-secondary: #65676e;
+  --color-secondary-foreground: #08090a;
+  --color-accent: #2563eb;
   --color-accent-foreground: #ffffff;
-  --color-success: #16a34a;
+  --color-success: #059669;
   --color-warning: #d97706;
-  --color-danger: #dc2626;
-  --color-border: rgba(10, 10, 11, 0.1);
-  --color-border-strong: rgba(10, 10, 11, 0.18);
-  --color-text-primary: #0a0a0b;
-  --color-text-secondary: #4b4d56;
-  --color-muted: #71717a;
-  --color-overlay: rgba(255, 255, 255, 0.7);
-  --color-glass: rgba(10, 10, 11, 0.03);
+  --color-danger: #e11d48;
+  --color-border: rgba(10, 10, 11, 0.05);
+  --color-border-strong: rgba(10, 10, 11, 0.1);
+  --color-text-primary: #111215;
+  --color-text-secondary: #585960;
+  --color-muted: #808189;
+  --color-overlay: rgba(255, 255, 255, 0.8);
+  --color-glass: rgba(255, 255, 255, 0.8);
   --color-glass-border: rgba(10, 10, 11, 0.08);
 
-  --shadow-soft: 0 1px 2px rgba(10, 10, 11, 0.06), 0 1px 1px rgba(10, 10, 11, 0.04);
-  --shadow-medium: 0 4px 16px rgba(10, 10, 11, 0.08), 0 2px 6px rgba(10, 10, 11, 0.05);
-  --shadow-large: 0 16px 48px rgba(10, 10, 11, 0.12), 0 6px 16px rgba(10, 10, 11, 0.06);
-  --shadow-glow: 0 0 32px rgba(10, 10, 11, 0.08);
-  --shadow-blue-glow: 0 0 40px rgba(76, 83, 196, 0.22);
-  --shadow-glass: 0 8px 32px rgba(10, 10, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --shadow-soft: 0 2px 12px rgba(10, 10, 11, 0.04);
+  --shadow-medium: 0 8px 24px rgba(10, 10, 11, 0.06);
+  --shadow-large: 0 30px 60px rgba(10, 10, 11, 0.08);
+  --shadow-glow: 0 0 40px rgba(10, 10, 11, 0.02);
+  --shadow-blue-glow: 0 0 50px rgba(37, 99, 235, 0.08);
+  --shadow-glass: 0 8px 30px rgba(10, 10, 11, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 @media (prefers-contrast: more) {
   :root {
-    --color-border: rgba(255, 255, 255, 0.24);
-    --color-text-secondary: #c9c9cf;
+    --color-border: rgba(255, 255, 255, 0.2);
+    --color-text-secondary: #dcdce2;
+    --color-glass-border: rgba(255, 255, 255, 0.25);
   }
 
   [data-theme="light"] {
-    --color-border: rgba(10, 10, 11, 0.28);
-    --color-text-secondary: #303138;
+    --color-border: rgba(10, 10, 11, 0.2);
+    --color-text-secondary: #2b2c32;
+    --color-glass-border: rgba(10, 10, 11, 0.22);
   }
 }

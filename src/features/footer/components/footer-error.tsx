@@ -25,7 +25,7 @@ function FooterErrorComponent({ message, onRetry }: FooterErrorProps) {
                         size="sm"
                         variant="outline"
                         onClick={onRetry}
-                        className="mt-[var(--space-8)] border-[var(--color-danger)]/40 hover:bg-[var(--color-danger)]/10 hover:text-[var(--color-danger)] rounded-[var(--radius-md)] flex items-center gap-[var(--space-4)]"
+                        className="mt-[var(--space-8)] flex items-center gap-[var(--space-4)] border-[var(--color-danger)]/30 text-[var(--color-danger)] hover:bg-[var(--color-danger)]/10 hover:text-[var(--color-danger)] cursor-pointer"
                     >
                         <RotateCw className="h-3 w-3" />
                         Retry

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface SectionHeadingProps {
   label: string;
@@ -40,13 +40,13 @@ export function SectionHeading({ label, heading, description, align = "left", cl
     >
       <motion.span
         variants={item}
-        className="text-xs font-semibold uppercase tracking-[var(--tracking-wider)] text-[var(--color-accent)]"
+        className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--color-accent)]"
       >
         {label}
       </motion.span>
       <motion.h2
         variants={item}
-        className="text-h2 font-bold leading-[var(--leading-tight)] tracking-[var(--tracking-tight)] text-[var(--color-text-primary)]"
+        className="text-h2 sm:text-[2.5rem] font-bold leading-[var(--leading-tight)] tracking-[-0.035em] text-[var(--color-text-primary)]"
       >
         {heading}
       </motion.h2>
@@ -54,7 +54,7 @@ export function SectionHeading({ label, heading, description, align = "left", cl
         <motion.p
           variants={item}
           className={cn(
-            "text-body-lg leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]",
+            "text-base md:text-lg leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium",
             align === "center" ? "max-w-2xl" : "max-w-xl"
           )}
         >

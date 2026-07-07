@@ -18,17 +18,26 @@ function ResumeDownloadComponent({ download }: ResumeDownloadProps) {
       <p className="max-w-2xl text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
         Download the PDF or open it in a new tab for a conventional resume view.
       </p>
-      <div className="flex flex-wrap justify-center gap-[var(--space-12)]">
-        <Button asChild size="lg" className="button-hover rounded-[var(--radius-md)]">
+      <div className="flex flex-wrap justify-center gap-[var(--space-16)]">
+        <Button
+          asChild
+          size="lg"
+          className="group cursor-pointer"
+        >
           <a href={download.pdfUrl} download>
-            <Download className="h-4 w-4" aria-hidden="true" />
+            <Download className="h-4 w-4 mr-1.5" />
             Download PDF
           </a>
         </Button>
-        <Button asChild variant="outline" size="lg" className="button-hover rounded-[var(--radius-md)]">
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="group cursor-pointer"
+        >
           <a href={download.openUrl} target="_blank" rel="noreferrer">
             Open Resume
-            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            <ExternalLink className="h-4 w-4 ml-1.5" />
           </a>
         </Button>
       </div>

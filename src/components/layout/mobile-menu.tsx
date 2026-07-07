@@ -19,10 +19,11 @@ const backdropVariants: Variants = {
 };
 
 const panelVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+    y: 0,
+    transition: { staggerChildren: 0.05, delayChildren: 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -77,7 +78,7 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
           exit="hidden"
           transition={{ duration: 0.25 }}
           onClick={handleBackdropClick}
-          style={{ backdropFilter: "blur(var(--blur-glass))", WebkitBackdropFilter: "blur(var(--blur-glass))" }}
+          style={{ backdropFilter: "blur(var(--blur-nav))", WebkitBackdropFilter: "blur(var(--blur-nav))" }}
           className="fixed inset-0 z-50 bg-[var(--color-overlay)] md:hidden"
         >
           <motion.div
@@ -85,7 +86,7 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="flex h-full w-full flex-col bg-[var(--color-surface)] px-[var(--space-24)] pt-[var(--space-24)] pb-[var(--space-48)]"
+            className="flex h-full w-full flex-col bg-[var(--color-surface)] px-[var(--space-24)] pt-[var(--space-24)] pb-[var(--space-48)] shadow-2xl"
           >
             <div className="flex items-center justify-end">
               <Button
@@ -95,9 +96,9 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
                 size="icon"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="rounded-[var(--radius-full)]"
+                className="h-10 w-10 rounded-[12px] hover:bg-[var(--color-glass)] transition-all duration-[var(--duration-fast)]"
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 stroke-[1.5]" />
               </Button>
             </div>
 
@@ -110,8 +111,8 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
                     aria-current={activeId === item.id ? "page" : undefined}
                     className={
                       activeId === item.id
-                        ? "block py-[var(--space-12)] text-3xl font-semibold tracking-[var(--tracking-tight)] text-[var(--color-text-primary)]"
-                        : "block py-[var(--space-12)] text-3xl font-semibold tracking-[var(--tracking-tight)] text-[var(--color-text-secondary)] transition-colors duration-[var(--duration-fast)] hover:text-[var(--color-text-primary)]"
+                        ? "block py-[var(--space-12)] text-3xl font-bold tracking-tight text-[var(--color-text-primary)] transition-all"
+                        : "block py-[var(--space-12)] text-3xl font-bold tracking-tight text-[var(--color-text-secondary)] transition-all duration-[var(--duration-fast)] hover:text-[var(--color-text-primary)]"
                     }
                   >
                     {item.label}
@@ -122,7 +123,7 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col gap-[var(--space-16)] border-t border-[var(--color-border)] pt-[var(--space-24)]"
+              className="flex flex-col gap-[var(--space-24)] border-t border-[var(--color-border)] pt-[var(--space-32)]"
             >
               <div className="flex items-center gap-[var(--space-16)]">
                 {SOCIAL_ITEMS.map((social) => (
@@ -132,20 +133,20 @@ export function MobileMenu({ isOpen, onClose, activeId }: MobileMenuProps) {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-full)] border border-[var(--color-border)] text-[var(--color-text-secondary)] transition-colors duration-[var(--duration-fast)] hover:text-[var(--color-text-primary)]"
+                    className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-glass)] transition-all duration-[var(--duration-fast)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)]"
                   >
-                    <social.icon className="h-4 w-4" />
+                    <social.icon className="h-5 w-5 stroke-[1.5]" />
                   </a>
                 ))}
               </div>
 
               <div className="flex gap-[var(--space-12)]">
-                <Button asChild variant="outline" className="flex-1 rounded-[var(--radius-md)]">
+                <Button asChild variant="outline" className="flex-1 cursor-pointer">
                   <a href={RESUME_URL} target="_blank" rel="noreferrer">
                     Resume
                   </a>
                 </Button>
-                <Button asChild className="flex-1 rounded-[var(--radius-md)]">
+                <Button asChild className="flex-1 cursor-pointer">
                   <a href="#contact" onClick={onClose}>
                     Hire Me
                   </a>

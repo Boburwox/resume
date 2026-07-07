@@ -7,44 +7,34 @@ import { ExperienceCard, type ExperienceItem } from "@/components/cards/experien
 
 const EXPERIENCE: ExperienceItem[] = [
   {
-    id: "vercel",
-    company: "Vercel",
-    role: "Senior Frontend Engineer",
-    duration: "2023 — Present",
-    location: "Remote",
+    id: "joylinks-teaching",
+    company: "JOYLINKS Learning Center",
+    role: "Frontend & Prompt Engineering Teacher",
+    duration: "Sep 2025 — Present",
+    location: "Samarkand, Uzbekistan",
     description:
-      "Leading the design system and performance initiatives for core dashboard products, partnering closely with design to ship interfaces that feel instant across every device.",
-    technologies: ["Next.js", "TypeScript", "React", "Turborepo"],
+      "Teaching JavaScript and React.js. Guiding 50+ students in UI engineering, component state flow, and leveraging AI tools to accelerate code generation, debugging, and mock drafting.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Prompt Engineering", "Git"],
   },
   {
-    id: "stripe",
-    company: "Stripe",
-    role: "Frontend Engineer",
-    duration: "2021 — 2023",
-    location: "San Francisco, CA",
-    description:
-      "Built and maintained checkout and billing surfaces used by thousands of merchants daily, with a focus on accessibility, resilience, and conversion-critical performance.",
-    technologies: ["React", "GraphQL", "Tailwind CSS"],
-  },
-  {
-    id: "linear",
-    company: "Linear",
-    role: "Product Engineer",
-    duration: "2019 — 2021",
+    id: "frontend-intern",
+    company: "Remote Internship",
+    role: "Frontend Developer Intern",
+    duration: "Feb 2024 — Aug 2024",
     location: "Remote",
     description:
-      "Owned end-to-end feature delivery from prototyping to production, shipping keyboard-first workflows that became core to the product's identity.",
-    technologies: ["React", "TypeScript", "Framer Motion"],
+      "Collaborated in remote workflows to construct responsive components using React and Tailwind CSS. Participated in UI reviews, integrated REST APIs, and improved page rendering speeds.",
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "REST API", "Git"],
   },
   {
-    id: "freelance",
-    company: "Freelance",
-    role: "Web Developer",
-    duration: "2017 — 2019",
-    location: "Remote",
+    id: "independent-work",
+    company: "Personal Projects",
+    role: "Frontend Engineer & Builder",
+    duration: "2024 — Present",
+    location: "Samarkand, Uzbekistan",
     description:
-      "Partnered with early-stage startups to design and build their first production websites, establishing engineering practices that scaled with their teams.",
-    technologies: ["JavaScript", "Node.js", "CSS"],
+      "Designing responsive interfaces and full-stack templates. Built medicine reminders and real-estate property interfaces, focusing on state management, route logic, and lightweight styling.",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
   },
 ];
 
@@ -64,12 +54,12 @@ export function Experience() {
       <div className="container">
         <SectionHeading
           label="Career Path"
-          heading="Where I&apos;ve made an impact"
-          description="A timeline of teams and products I&apos;ve helped build, from early-stage startups to platforms used by millions."
+          heading="Where I've made an impact"
+          description="A timeline of projects and concepts I have actively shaped and built."
           align="center"
         />
 
-        <div ref={timelineRef} className="relative mt-[var(--space-64)]">
+        <div ref={timelineRef} className="relative mt-[var(--space-64)] font-body">
           <div
             aria-hidden="true"
             className="absolute left-[19px] top-0 h-full w-px bg-[var(--color-border)] lg:left-1/2 lg:-translate-x-1/2"

@@ -87,7 +87,7 @@ export function ScrollReveal({
         }
     }, [variant, duration, delay, shouldReduceMotion]);
 
-    const Component = motion[as] as any;
+    const Component = motion[as] as unknown as React.FC<React.ComponentProps<typeof motion.div>>;
 
     return (
         <Component

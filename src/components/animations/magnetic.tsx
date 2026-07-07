@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 
 interface MagneticProps {
@@ -12,7 +12,6 @@ interface MagneticProps {
 export function Magnetic({ children, strength = 0.35, className }: MagneticProps) {
     const ref = useRef<HTMLDivElement>(null);
     const shouldReduceMotion = useReducedMotion();
-    const [isHovered, setIsHovered] = useState(false);
 
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -42,18 +41,12 @@ export function Magnetic({ children, strength = 0.35, className }: MagneticProps
     const handleMouseLeave = () => {
         x.set(0);
         y.set(0);
-        setIsHovered(false);
-    };
-
-    const handleMouseEnter = () => {
-        setIsHovered(true);
     };
 
     return (
         <motion.div
             ref={ref}
             onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={shouldReduceMotion ? {} : { x: springX, y: springY }}
             className={className}

@@ -36,7 +36,7 @@ export function Stagger({
         };
     }, [staggerChildren, delayChildren, shouldReduceMotion]);
 
-    const Component = motion[as] as any;
+    const Component = motion[as] as unknown as React.FC<React.ComponentProps<typeof motion.div>>;
 
     return (
         <Component
@@ -86,7 +86,7 @@ export function StaggerChild({
         };
     }, [shouldReduceMotion]);
 
-    const Component = motion[as] as any;
+    const Component = motion[as] as unknown as React.FC<React.ComponentProps<typeof motion.div>>;
 
     return (
         <Component

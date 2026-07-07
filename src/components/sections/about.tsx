@@ -6,10 +6,10 @@ import { SectionHeading } from "@/components/common/section-heading";
 import { StatCard } from "@/components/common/stat-card";
 
 const STATS = [
-  { icon: Calendar, value: 6, suffix: "+", label: "Years of Experience" },
-  { icon: Code2, value: 48, suffix: "+", label: "Projects Completed" },
-  { icon: Award, value: 20, suffix: "+", label: "Technologies" },
-  { icon: Users, value: 30, suffix: "+", label: "Happy Clients" },
+  { icon: Calendar, value: 2, suffix: "+", label: "Years of Experience" },
+  { icon: Code2, value: 10, suffix: "+", label: "Projects Built" },
+  { icon: Award, value: 12, suffix: "+", label: "Technologies" },
+  { icon: Users, value: 50, suffix: "+", label: "Students Guided" },
 ];
 
 const EASE_EMPHASIZED = [0.16, 1, 0.3, 1] as const;
@@ -32,9 +32,9 @@ export function About() {
       <div className="container grid gap-[var(--space-64)] lg:grid-cols-2 lg:items-start lg:gap-[var(--space-48)]">
         <div>
           <SectionHeading
-            label="About Me"
-            heading="Engineering with intention"
-            description="A closer look at how I think, build, and grow as an engineer."
+            label="My Story"
+            heading="Engineering UIs with structural clarity"
+            description="A human approach to writing software, teaching others, and scaling visual products."
             align="left"
           />
 
@@ -46,25 +46,13 @@ export function About() {
             className="mt-[var(--space-32)] flex flex-col gap-[var(--space-20)] text-body-lg leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]"
           >
             <motion.p variants={paragraphVariants}>
-              I&apos;m a frontend engineer who cares as much about how software feels as how it
-              performs. Over the past six years I&apos;ve worked across startups and larger
-              product teams, turning ambiguous ideas into interfaces people trust and enjoy using
-              every day.
+              My focus on frontend engineering started when I realized that UIs are the critical bridge between users and software. I wanted to build interfaces that perform exactly as they look—fast, responsive, and predictable. Moving from static layouts to modular React, Next.js, and TypeScript setups, I treat UI engineering as the discipline of writing maintainable interfaces that resist complexity.
             </motion.p>
             <motion.p variants={paragraphVariants}>
-              My mission is simple: build products that respect people&apos;s time and attention.
-              I hold myself to a high bar on performance, accessibility, and craft, because those
-              details are what separate good software from software people genuinely love.
+              To deepen my perspective, I study Marketing at the Samarkand State Institute of Economics and Service. This helps me understand the business value, user psychology, and product-market fit behind the code, enabling me to build products that solve real problems rather than just translating layouts.
             </motion.p>
             <motion.p variants={paragraphVariants}>
-              I value clarity over cleverness, calm collaboration over noise, and steady iteration
-              over big rewrites. The teams I do my best work with are the ones that treat design
-              and engineering as one continuous conversation.
-            </motion.p>
-            <motion.p variants={paragraphVariants}>
-              Looking ahead, I&apos;m focused on deepening my product sense, mentoring engineers
-              earlier in their careers, and contributing to tools that make the web faster for
-              everyone.
+              Additionally, teaching frontend development and prompt engineering at JOYLINKS Learning Center has been a major milestone. Explaining React&apos;s data flow, browser behaviors, and LLM prompting to students is the ultimate test of understanding: it forces me to strip away buzzwords, master the fundamentals, and think deeply about clean architecture.
             </motion.p>
           </motion.div>
         </div>

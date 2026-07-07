@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface NavLinkProps {
   href: string;
@@ -18,7 +18,7 @@ function NavLinkComponent({ href, label, isActive, onClick }: NavLinkProps) {
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "group relative rounded-[var(--radius-sm)] px-[var(--space-12)] py-[var(--space-8)] text-sm font-medium transition-colors duration-[var(--duration-fast)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "group relative rounded-[10px] px-[var(--space-16)] py-[var(--space-8)] text-[14px] font-medium tracking-tight transition-all duration-[250ms] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-background)] cursor-pointer select-none",
         isActive
           ? "text-[var(--color-text-primary)]"
           : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -26,16 +26,19 @@ function NavLinkComponent({ href, label, isActive, onClick }: NavLinkProps) {
     >
       <span className="relative z-10">{label}</span>
 
-      <span
-        aria-hidden="true"
-        className="absolute inset-x-[var(--space-12)] bottom-[4px] h-px origin-left scale-x-0 bg-[var(--color-text-primary)] transition-transform duration-[var(--duration-normal)] ease-[var(--ease-emphasized)] group-hover:scale-x-100"
-      />
-
       {isActive && (
         <motion.span
           layoutId="navbar-active-indicator"
-          className="absolute inset-x-[var(--space-12)] bottom-[2px] h-[2px] rounded-full bg-[var(--color-accent)]"
-          transition={{ type: "spring", stiffness: 380, damping: 32 }}
+          className="absolute inset-0 -z-10 rounded-[10px] bg-[var(--color-glass)] border border-[var(--color-border-strong)] shadow-[var(--shadow-soft)]"
+          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+        />
+      )}
+
+      {!isActive && (
+        <motion.span
+          whileHover={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          className="absolute inset-0 -z-10 rounded-[10px] bg-[var(--color-glass)]/40 opacity-0 transition-opacity duration-[var(--duration-fast)]"
         />
       )}
     </a>

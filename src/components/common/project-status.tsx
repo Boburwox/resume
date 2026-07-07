@@ -56,7 +56,7 @@ function ProjectStatusComponent({ status, className }: ProjectStatusProps) {
         className
       )}
     >
-      <Icon className="h-3 w-3" aria-hidden="true" />
+      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
       {config.label}
     </span>
   );

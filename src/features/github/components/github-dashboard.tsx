@@ -57,7 +57,7 @@ function GitHubDashboardComponent({ username = process.env.NEXT_PUBLIC_GITHUB_US
               </p>
             </div>
             {data && (
-              <Button asChild variant="outline" size="lg" className="button-hover w-fit rounded-[var(--radius-md)]">
+              <Button asChild variant="outline" size="lg" className="w-fit cursor-pointer">
                 <a href={data.profile.profileUrl} target="_blank" rel="noreferrer">
                   View GitHub
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -175,7 +175,7 @@ function DashboardCta({ profileUrl, username }: DashboardCtaProps) {
       <p className="max-w-2xl text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
         Explore @{username} on GitHub for repository history, open-source work, and current engineering experiments.
       </p>
-      <Button asChild size="lg" className="button-hover w-fit rounded-[var(--radius-md)]">
+      <Button asChild size="lg" className="w-fit cursor-pointer">
         <a href={profileUrl} target="_blank" rel="noreferrer">
           Open GitHub Profile
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

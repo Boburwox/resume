@@ -40,16 +40,16 @@ function GitHubStatCardComponent({ icon: Icon, label, value, className }: GitHub
       {...(isInView ? { animate: { opacity: 1, scale: 1, y: 0 } } : {})}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "glass card-hover flex min-h-32 flex-col justify-between rounded-[var(--radius-xl)] p-[var(--space-20)]",
+        "glass flex min-h-32 flex-col justify-between rounded-[var(--radius-xl)] p-[var(--space-24)] border border-[var(--color-glass-border)] bg-[var(--color-glass)] shadow-[var(--shadow-glass)] hover:-translate-y-[2px] transition-transform duration-[250ms]",
         className,
       )}
     >
-      <Icon className="h-5 w-5 text-[var(--color-accent)]" aria-hidden="true" />
+      <Icon className="h-5 w-5 text-[var(--color-accent)] stroke-[1.5]" aria-hidden="true" />
       <div className="flex flex-col gap-[var(--space-4)]">
         <span className="text-h3 font-bold tracking-[var(--tracking-normal)] text-[var(--color-text-primary)]">
           {formatCompactNumber(renderedValue)}
         </span>
-        <span className="text-sm text-[var(--color-text-secondary)]">{label}</span>
+        <span className="text-sm font-semibold text-[var(--color-text-secondary)]">{label}</span>
       </div>
     </motion.div>
   );

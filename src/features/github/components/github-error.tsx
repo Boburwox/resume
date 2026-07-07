@@ -23,7 +23,7 @@ function GitHubErrorComponent({ message, onRetry }: GitHubErrorProps) {
           {message ?? "The dashboard could not load the latest repository data."}
         </p>
       </div>
-      <Button type="button" variant="outline" onClick={onRetry} className="button-hover rounded-[var(--radius-md)]">
+      <Button type="button" variant="outline" onClick={onRetry} className="cursor-pointer">
         <RefreshCw className="h-4 w-4" aria-hidden="true" />
         Retry
       </Button>

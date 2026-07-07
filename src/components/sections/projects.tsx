@@ -143,10 +143,15 @@ export function Projects() {
         </div>
 
         <div className="mt-[var(--space-64)] flex justify-center">
-          <Button asChild variant="outline" size="lg" className="button-hover rounded-[var(--radius-md)]">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="group cursor-pointer"
+          >
             <a href="/projects">
               View All Projects
-              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-[var(--duration-fast)] group-hover:translate-x-1" aria-hidden="true" />
             </a>
           </Button>
         </div>

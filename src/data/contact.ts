@@ -1,32 +1,32 @@
-import { Clock3, Github, Linkedin, Mail, MapPin, MessageCircle, Send, Sparkles, Users } from "lucide-react";
+import { Clock3, Github, Instagram, Mail, MapPin, MessageCircle, Send, Sparkles, Users } from "lucide-react";
 import type { ContactData } from "@/types/contact";
 
 export const CONTACT_DATA: ContactData = {
   header: {
-    title: "Let&apos;s turn a good idea into a shipped product.",
+    title: "Let's translate ideas into code.",
     description:
-      "Reach out for engineering opportunities, product collaborations, open-source work, or a focused conversation about building useful software.",
+      "Reach out for frontend engineering opportunities, open-source collaborations, frontend/prompt teaching invites, or to discuss building interesting visual products.",
   },
   availability: [
     {
       id: "opportunities",
       label: "Opportunities",
       value: "Available",
-      description: "Open to full-time roles, internships, and serious product teams.",
+      description: "Open to full-time frontend engineering positions and serious product work.",
       icon: Sparkles,
     },
     {
       id: "collaboration",
       label: "Collaboration",
       value: "Open",
-      description: "Interested in open-source, SaaS, AI, and healthcare product work.",
+      description: "Interested in open-source React/Next.js systems and mentoring programs.",
       icon: Users,
     },
     {
       id: "response",
       label: "Response",
-      value: "24-48h",
-      description: "Clear messages with context get the fastest response.",
+      value: "< 24h",
+      description: "Usually replies within 24 hours to structured messages.",
       icon: Clock3,
     },
   ],
@@ -35,7 +35,7 @@ export const CONTACT_DATA: ContactData = {
       id: "email",
       title: "Email",
       description: "Best for detailed opportunities and project conversations.",
-      href: "mailto:hello@example.com",
+      href: "mailto:boburwox@gmail.com",
       actionLabel: "Send Email",
       icon: Mail,
     },
@@ -48,25 +48,25 @@ export const CONTACT_DATA: ContactData = {
       icon: Github,
     },
     {
-      id: "linkedin",
-      title: "LinkedIn",
-      description: "Connect for professional updates and hiring conversations.",
-      href: "https://linkedin.com",
-      actionLabel: "Connect",
-      icon: Linkedin,
+      id: "instagram",
+      title: "Instagram",
+      description: "Follow for personal work, updates, and photography.",
+      href: "https://instagram.com/kh.boburwox",
+      actionLabel: "Follow",
+      icon: Instagram,
     },
     {
       id: "telegram",
       title: "Telegram",
       description: "Quick messages for collaboration and lightweight planning.",
-      href: "https://t.me",
+      href: "https://t.me/boburwox",
       actionLabel: "Message",
       icon: MessageCircle,
     },
     {
       id: "location",
       title: "Location",
-      description: "Based in Uzbekistan and comfortable with remote teams.",
+      description: "Based in Samarkand, Uzbekistan. Comfortable with remote work.",
       href: "#timezone",
       actionLabel: "View Timezone",
       icon: MapPin,
@@ -74,21 +74,21 @@ export const CONTACT_DATA: ContactData = {
   ],
   socials: [
     { id: "github", label: "GitHub", href: "https://github.com/Boburwox", icon: Github },
-    { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-    { id: "telegram", label: "Telegram", href: "https://t.me", icon: Send },
-    { id: "email", label: "Email", href: "mailto:hello@example.com", icon: Mail },
+    { id: "telegram", label: "Telegram", href: "https://t.me/boburwox", icon: Send },
+    { id: "instagram", label: "Instagram", href: "https://instagram.com/kh.boburwox", icon: Instagram },
+    { id: "email", label: "Email", href: "mailto:boburwox@gmail.com", icon: Mail },
   ],
   timezone: {
-    location: "Uzbekistan",
-    timezone: "Asia/Tashkent, UTC+5",
+    location: "Samarkand, Uzbekistan",
+    timezone: "Asia/Samarkand, UTC+5",
     availabilityWindow: "Weekdays, 09:00-19:00",
-    responseTime: "Usually within 24-48 hours",
+    responseTime: "Usually within 24 hours",
   },
   faq: [
     {
       id: "reply",
       question: "How quickly do you reply?",
-      answer: "Most thoughtful messages get a response within 24-48 hours, depending on timezone and project detail.",
+      answer: "Most thoughtful messages get a response within 24 hours, depending on timezone and project detail.",
     },
     {
       id: "remote",
@@ -98,18 +98,18 @@ export const CONTACT_DATA: ContactData = {
     {
       id: "collaborate",
       question: "Can we collaborate?",
-      answer: "Yes, especially on SaaS, frontend systems, open-source tools, AI workflows, and healthcare product ideas.",
+      answer: "Yes, especially on SaaS, frontend systems, open-source tools, React/Next.js architectures, and product ideas.",
     },
     {
       id: "stack",
       question: "What technologies do you specialize in?",
-      answer: "The strongest focus is Next.js, React, TypeScript, Tailwind CSS, accessible UI, and product-grade frontend architecture.",
+      answer: "Specializing in Next.js, React, TypeScript, Tailwind CSS, accessible UI systems, and robust frontend design systems.",
     },
   ],
   cta: {
     title: "Have an idea worth building?",
-    description: "Send the context, goal, and timeline. I&apos;ll respond with the clearest next step.",
-    href: "mailto:hello@example.com",
+    description: "Send the context, goal, and timeline. I'll respond with the clearest next step.",
+    href: "mailto:boburwox@gmail.com",
     label: "Start a Conversation",
   },
 };

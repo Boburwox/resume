@@ -63,7 +63,7 @@ function FooterHeroComponent() {
                 transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="max-w-2xl text-body-lg leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]"
             >
-                Thank you for scanning through my work. If you value execution, clean abstractions, and high-performance user interfaces, let's connect.
+                Thank you for scanning through my work. If you value execution, clean abstractions, and high-performance user interfaces, let&apos;s connect.
             </motion.p>
         </div>
     );

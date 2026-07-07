@@ -20,10 +20,10 @@ function ContactFaqComponent({ items }: ContactFaqProps) {
     return (
         <section aria-labelledby="faq-section-title" className="flex flex-col gap-[var(--space-24)]">
             <div>
-                <h3 id="faq-section-title" className="text-h3 font-semibold tracking-[var(--tracking-normal)] text-[var(--color-text-primary)]">
+                <h3 id="faq-section-title" className="text-h3 font-bold tracking-[var(--tracking-tight)] text-[var(--color-text-primary)]">
                     Frequently Asked Questions
                 </h3>
-                <p className="mt-[var(--space-8)] max-w-2xl text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+                <p className="mt-[var(--space-8)] max-w-2xl text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
                     Quick answers to common questions about communication structure, work availability, and collaboration.
                 </p>
             </div>
@@ -49,11 +49,11 @@ function ContactFaqComponent({ items }: ContactFaqProps) {
                                 aria-expanded={isExpanded}
                                 aria-controls={contentId}
                                 onClick={() => toggleExpand(item.id)}
-                                className="flex w-full items-center justify-between gap-[var(--space-16)] px-[var(--space-20)] py-[var(--space-20)] text-left font-semibold text-[var(--color-text-primary)] outline-none hover:bg-[var(--color-glass)] focus-visible:bg-[var(--color-glass)] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-accent)] cursor-pointer"
+                                className="flex w-full items-center justify-between gap-[var(--space-16)] px-[var(--space-24)] py-[var(--space-20)] text-left font-bold text-[var(--color-text-primary)] outline-none hover:bg-[var(--color-glass)] focus-visible:bg-[var(--color-glass)] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-accent)] cursor-pointer"
                             >
                                 <span>{item.question}</span>
                                 <ChevronDown
-                                    className={`h-5 w-5 text-[var(--color-muted)] transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
+                                    className={`h-5 w-5 text-[var(--color-muted)] transition-transform duration-300 stroke-[1.5] ${isExpanded ? "rotate-180" : ""
                                         }`}
                                     aria-hidden="true"
                                 />
@@ -70,7 +70,7 @@ function ContactFaqComponent({ items }: ContactFaqProps) {
                                         exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                                     >
-                                        <div className="border-t border-[var(--color-border)] px-[var(--space-20)] py-[var(--space-16)] text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+                                        <div className="border-t border-[var(--color-border)] px-[var(--space-24)] py-[var(--space-20)] text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
                                             <p>{item.answer}</p>
                                         </div>
                                     </motion.div>

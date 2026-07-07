@@ -22,7 +22,7 @@ export function createPersonJsonLd() {
     url: env.siteUrl,
     description: siteConfig.description,
     sameAs: socialUrls,
-    jobTitle: "Software Engineer",
+    jobTitle: "Frontend Engineer",
     knowsAbout: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Software Engineering", "Product Design"],
   };
 }
@@ -94,7 +94,7 @@ export function createPortfolioGraphJsonLd() {
         name: siteConfig.creator,
         url: env.siteUrl,
         sameAs: socialUrls,
-        jobTitle: "Software Engineer",
+        jobTitle: "Frontend Engineer",
         knowsAbout: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Software Engineering", "Product Design"],
       },
       {

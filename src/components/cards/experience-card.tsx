@@ -33,25 +33,25 @@ function ExperienceCardComponent({ item, align }: ExperienceCardProps) {
       whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="card-hover glass flex flex-col gap-[var(--space-16)] rounded-[var(--radius-xl)] p-[var(--space-24)]"
+      className="glass flex flex-col gap-[var(--space-20)] rounded-[var(--radius-xl)] p-[var(--space-32)] border border-[var(--color-glass-border)] bg-[var(--color-glass)] shadow-[var(--shadow-glass)] hover:-translate-y-[2px] transition-transform duration-[250ms]"
     >
       <div>
-        <h3 className="text-h4 font-semibold text-[var(--color-text-primary)]">{item.role}</h3>
-        <p className="text-sm font-medium text-[var(--color-accent)]">{item.company}</p>
+        <h3 className="text-h4 font-bold text-[var(--color-text-primary)]">{item.role}</h3>
+        <p className="text-sm font-bold text-[var(--color-accent)]">{item.company}</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-[var(--space-16)] text-xs text-[var(--color-muted)]">
+      <div className="flex flex-wrap items-center gap-[var(--space-16)] text-xs text-[var(--color-muted)] font-semibold">
         <span className="inline-flex items-center gap-[var(--space-4)]">
-          <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+          <Calendar className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
           {item.duration}
         </span>
         <span className="inline-flex items-center gap-[var(--space-4)]">
-          <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+          <MapPin className="h-[18px] w-[18px] stroke-[1.5]" aria-hidden="true" />
           {item.location}
         </span>
       </div>
 
-      <p className="text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)]">
+      <p className="text-sm leading-[var(--leading-relaxed)] text-[var(--color-text-secondary)] font-medium">
         {item.description}
       </p>
 
@@ -59,7 +59,7 @@ function ExperienceCardComponent({ item, align }: ExperienceCardProps) {
         {item.technologies.map((tech) => (
           <li
             key={tech}
-            className="rounded-[var(--radius-full)] border border-[var(--color-border)] px-[var(--space-12)] py-[var(--space-4)] text-xs font-medium text-[var(--color-text-secondary)]"
+            className="rounded-[10px] border border-[var(--color-border)] px-[var(--space-12)] py-[var(--space-4)] text-[11px] font-semibold text-[var(--color-text-secondary)]"
           >
             {tech}
           </li>
